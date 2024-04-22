@@ -11,6 +11,12 @@ document.querySelector('button').addEventListener('click', () => {
     }
 })
 
+document.querySelector('.keys').addEventListener('click', (event) => {
+    let som = event.target.textContent;
+    let forma = (`key${som}`);
+    playSound(forma);
+})
+
 function playSound(sound) {
     let key = document.querySelector(`audio#${sound}`);
     let select = document.querySelector(`div#${sound}`);
@@ -39,9 +45,5 @@ function tocaString(song) {
 
 }
 
-document.querySelector('.keys').addEventListener('click', (event) => {
-    let som = event.target.textContent;
-    let forma = (`key${som}`);
-    playSound(forma);
-})
+
 
